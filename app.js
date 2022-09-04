@@ -1,7 +1,7 @@
 
 /* Load All Categories API */
 const loadAllCatories = async () => {
-  toggleSpinner(true);
+  // toggleSpinner(true);
   const url = `https://openapi.programming-hero.com/api/news/categories`;
 
   try {
@@ -39,7 +39,7 @@ const displayCategory = categories => {
 /* Show Category Wise News */
 const categoryNewsShow = async (categoryId, categoryName) => {
   // console.log(categoryId);
-  toggleSpinner(true);
+  // toggleSpinner(true);
   const url = `https://openapi.programming-hero.com/api/news/category/${ categoryId }`;
   try {
     const res = await fetch(url);
@@ -105,8 +105,8 @@ const displayNews = (categoriesNewsData, categoryName) => {
             </div>
 
             <div>
-              <button type="button"onclick="showModal('${ newsData._id }')" class="details-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                <i class="fa-solid fa-arrow-right"></i>
+              <button type="button"onclick="showModal('${ newsData._id }')" class="details-btn bg-primary"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <i class="fa-solid fa-arrow-right text-white"></i>
               </button>
             </div>
           </div>
@@ -115,7 +115,7 @@ const displayNews = (categoriesNewsData, categoryName) => {
         `;
     cardMainContainer.appendChild(newsCardContainer);
   })
-  toggleSpinner(false);
+  // toggleSpinner(false);
 }
 
 
@@ -179,16 +179,16 @@ const displayModal = modalDetails => {
 
 
 
-/* Spinner */
-const toggleSpinner = isLoading => {
-  const spinnerContainer = document.getElementById('spinner-div');
-  if (isLoading) {
-    spinnerContainer.classList.remove('d-none');
-  }
-  else {
-    spinnerContainer.classList.add('d-none');
-  }
-}
+// /* Spinner */
+// const toggleSpinner = isLoading => {
+//   const spinnerContainer = document.getElementById('spinner-div');
+//   if (isLoading) {
+//     spinnerContainer.classList.remove('d-none');
+//   }
+//   else {
+//     spinnerContainer.classList.add('d-none');
+//   }
+// }
 
 
 
